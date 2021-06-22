@@ -96,7 +96,7 @@ gameMessenger.RaiseEvent(new SceneLoadedEvent("MetaGame"));
 Но вот отправить по ошибке чисто боевое событие через GameMessenger не получится (ограничения через констрейнт типа-параметра),
 у них разные интерфейсы (ведь для боевых событий у нас есть BattleMessenger в контексте боя) Т.е.
 ```c#
-gameMessenger.RaiseEvent(new EnemyKilledEvent("John Doe")) // ошибка !
+gameMessenger.RaiseEvent(new EnemyKilledEvent(null)) // ошибка !
 ```
 И это будет видно сразу. Код даже не скомпилируется, а не вызовет исключение на этапе выполнения.
 
